@@ -5,22 +5,32 @@
 
 //Formulario inicial de login
 ?>
-<link rel="stylesheet" type="text/css" href="../CSS/estilos.css" media="screen">
+<!DOCTYPE html>
+<html lang="es">
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+</html>
+<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="../CSS/estilos.css" media="screen" />
+<script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+
 <body>
-	<form action="../Controladores/autenticar.php" method="post">
-	<table class="TLogin">
-		<tr>
-			<td>Usuario:</td>
-			<td><input type="text" name="login"></td>
- 		</tr>
- 		<tr>
- 			<td>Password:</td>
- 			<td><input type="password" name="pass"></td>
- 		</tr>
- 		<tr>
- 			<td><input type="submit" name="accion" class="btn" value="Validar"></td>
-			<td><input type="reset" name="accion" class="btn" value="Limpiar"></td>
-		</tr>
-	</table>
-	</form>
+    <div  class = "container">
+        <div class="col-md-6 col-md-offset-3">
+            <form class="login" action="../Controladores/autenticar.php" method="post">
+                <div class="heading"> 
+                        <h2> <b>Sign In</b></h2>  
+                </div>
+                <div class="controls">
+                        <input type="text" class="form-control" placeholder="Usuario" name="login">
+                        <input type="password" class="form-control" placeholder="Contraseña" name="pass">
+                </div>
+                <div class="controls">
+                    <input type="submit" name="accion" class="btn btn-primary col-md-5" value="Validar"> 
+                    <input type="reset" name="accion" class="btn btn-info col-md-5 col-md-offset-2" value="Limpiar">
+                </div>
+                <div class="clearfix"></div>
+                
+            </form>
+        </div>
+    </div>
 </body>

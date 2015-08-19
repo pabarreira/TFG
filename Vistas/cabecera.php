@@ -11,6 +11,8 @@ include "../Controladores/funcionalidades.php";
 
 ?>
 <link rel="stylesheet" type="text/css" href="../CSS/estilos.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css" media="screen" />
+<script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
 <body>
 <table class="TPrincipal" align="center">
 
