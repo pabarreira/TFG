@@ -1,5 +1,5 @@
 body{
-	background-color: #EEE;
+	background-color: lightslategray;
 	background-size: 100% 100%; 
 }
 .login{
@@ -10,15 +10,62 @@ body{
 }
 
 .heading{
-    background-color: #EEE;
-    color: royalblue;
+    color: white;
+    background-color: lightslategray;
     border-radius: 5px;
     padding: 2px;
     padding-left: 20px;
-  
 }
+
 .controls{
     padding-top: 5%;
 }
 
+.portada{
+    background-color: white;
+	margin-top: 10%;
+	border-radius: 15px;
+    padding: 3%;
+}
 
+.imagen{
+    height: 100px;
+    width: 100px;
+    padding: 5px;
+}
+
+.sesion{
+    padding-right: 17px;
+    color: white;
+    text-align: right;
+}
+
+.enlace{
+    color: white;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.table{
+    border-style: solid;
+    border-color: lightslategray;
+    background-color: lightslategray;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.menu{
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+.iluminacion{
+    background-color: white;
+	margin-top: 3%;
+	border-radius: 15px;
+    padding: 3%;
+}
+
+.cabecera{
+    text-align: center;
+}

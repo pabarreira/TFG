@@ -49,13 +49,14 @@ class Usuario
 			// y lo enviamos a la pagina de Menu
 			if ($this->password==$res['password'])
 				session_start();
-			$_SESSION['user']=$res['nombre'];
-			header("location:../Vistas/menu.php");
+			$_SESSION['nombre']=$res['nombre'];
+			header("location:../Vistas/portada.php");
 		}
 		//si no existe el login en la bd lo mandamos a loguearse
 		else
 		{
-			echo "No existe el usuario\n";
+            echo $sql;
+			echo "No existe el usuario \n";
 			echo "<a href='../Vistas/login.php'>Volver al Login</a>";
 		}
 
