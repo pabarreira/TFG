@@ -3,29 +3,56 @@
 //Creado por: ABP14/10
 //-------------------------------------------------------
 
-include "../Modelos/riegoClass.php";
-include "../Vistas/cabecera.php";
-$riego=new riego();
-
+require_once("../Controladores/cntrlHorario.php");
+include "../Vistas/portada.php";
 ?>
-<form class="Formulario "action="../Controladores/procesar.php" method="post">			
-	<table class="TFormulario" align="center" border="1">
-		<tr>
-			<td>Riego</td>
-			<td>Humedad actual</td>
-			<td>Humedad minima</td>
-			<td>Humedad maxima</td>
-			<td>Nivel de agua</td>
-			<td>Enc/Apg</td>
-		</tr>
-            	<?php $riego->obtenerRiego();?>
-        <tr>
-			<td colspan="3" align="center"><input type="submit" class="btn" name="accion" value="Mod Riego"></td>
-			<td colspan="3" align="center"><input type="submit" class="btn" name="accion" value="Volver"></td>
-		</tr>
-	</table>
 
-</form>
-<?php 
-	include "../Vistas/pie.php";
-?>
+<div  class = "container">       
+    <div class="col-md-8 col-md-offset-2 ">
+        <form class="condicion">
+            <div class="titulo">
+                <label><h4>Horarios programados: </h4></label>
+            </div>
+            <div class="datos">
+                
+                <div  class = "panel panel-primary">   
+                    
+                    <div class="row">
+                        <div class="col-md-3">
+                            Horario
+                        </div>
+                        <div class="col-md-3" >
+                            Inicio
+                        </div>
+                        <div class="col-md-3">
+                            Fin
+                        </div>
+                        <div class="col-md-3" >
+                            Borrar
+                        </div>
+                    </div>
+                    <div class="row">
+                        <input type="hidden" name="tipo" value="riego">
+                        <?php obtenerHorarios("riego");?>  
+                    </div>
+                </div>
+                <div class="controls row">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".anhadir">Añadir</button>
+                    <div class="modal fade anhadir" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                        <?php frmAñadir("riego");?>                          
+                    </div>
+                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target=".modificar">Act/Des</button>
+                    <div class="modal fade modificar" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                        <?php frmModificar("riego");?>                          
+                    </div>
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target=".borrar">Borrar</button>
+                    <div class="modal fade borrar" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                        <?php frmBorrar("riego");?>                          
+                    </div>
+                    <a href="../Vistas/portada.php" ><input type="button" class="btn btn-default" value="Vovler"></a>
+                </div>
+            </div>
+         </form>
+        
+    </div>
+</div>

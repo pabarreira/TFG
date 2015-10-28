@@ -8,6 +8,7 @@ session_start();
 if (!(isset($_SESSION['nombre'])))
     header("location:../Vistas/login.php");
 include "../Controladores/funcionalidades.php";
+require_once("../Controladores/cntrlCondiciones.php");
 
 ?>
 
@@ -25,49 +26,7 @@ include "../Controladores/funcionalidades.php";
         
         <div class="col-md-8 col-md-offset-2 ">
             <form class="portada">
-                <div class="table">
-                    <div class="row sesion">
-                        <?php 
-                            echo $_SESSION['nombre']." - ";			        			 
-                        ?>
-                        <a class="enlace" href="../Vistas/desconectar.php"><?php echo "Desconectar";?></a>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <img src="../Imagenes/Condicion.png" alt="..." class="imagen img-circle">
-                            <input type="text" style="text-align: center" class="form-control" placeholder="Condiciones" name="humedad">
-                        </div>
-                        <div class="col-md-6" >
-                            <img src="../Imagenes/Condicion.png" alt="..." class="imagen img-circle">
-                            <input type="text" style="text-align: center"  class="form-control" placeholder="Condiciones" name="temperatura">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <img src="../Imagenes/Condicion.png" alt="..." class="imagen img-circle">
-                            <input type="text" style="text-align: center" class="form-control" placeholder="Condiciones" name="iluminacion">
-                        </div>
-                        <div class="col-md-4">
-                            <img src="../Imagenes/Condicion.png" alt="..." class="imagen img-circle">
-                            <input type="text" style="text-align: center" class="form-control" placeholder="Condiciones" name="riego">
-                        </div>
-                        <div class="col-md-4">
-                            <img src="../Imagenes/Condicion.png" alt="..." class="imagen img-circle">
-                            <input type="text" style="text-align: center" class="form-control" placeholder="Condiciones" name="ventilacion">
-                        </div>
-                    </div>
-                </div> 
-                <div class="menu">
-                    <div class="row">
-                        <ul class="nav nav-pills nav-justified">
-                            <li class="active"><a href="#">Humedad</a></li>
-                            <li><a href="#">Temperatura</a></li>
-                            <li><a href="../Vistas/iluminacion2.php">Iluminación</a></li>
-                            <li><a href="#">Riego</a></li>
-                            <li><a href="#">Ventilacion</a></li>
-                        </ul>
-                    </div>
-                </div>                     
+                <?php obtenerCondiciones();?>                              
             </form>
         </div>
     </div>

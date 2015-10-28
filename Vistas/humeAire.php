@@ -3,36 +3,36 @@
 //Creado por: ABP14/10
 //-------------------------------------------------------
 
-require_once("../Controladores/cntrlVentilacion.php");
+require_once("../Controladores/cntrlHumeAire.php");
 include "../Vistas/portada.php";
 ?>
 
 <div  class = "container">       
     <div class="col-md-8 col-md-offset-2 ">
-        <form class="condicion" action="../Controladores/cntrlVentilacion.php" method="post">
+        <form class="condicion" action="../Controladores/cntrlHumeAire.php" method="post">
             <div class="titulo">
-                <label><h4>Ventiladores </h4></label>
+                <label><h4>Humedad aire </h4></label>
             </div>
             <div class="datos">
                 
                 <div  class = "panel panel-primary">   
                     
-                    <div class="row">
+                    <div class="row cabeTabla">
                         <div class="col-md-3">
-                            Horario
+                            Deseada
                         </div>
                         <div class="col-md-3" >
-                            Inicio
+                            Minima
                         </div>
                         <div class="col-md-3">
-                            Fin
+                            Maxima
                         </div>
-                        <div class="col-md-3" >
-                            On/Off
+                        <div class="col-md-3">
+                            Actual
                         </div>
                     </div>
-                    <div class="row">                     
-                     <?php obtenerVentilacion();?>
+                    <div class="row datos2">  
+                         <?php obtenerHumedades();?>
                     </div>
                 </div>
                 <div class="controls row">

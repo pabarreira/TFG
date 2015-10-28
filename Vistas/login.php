@@ -21,7 +21,7 @@
                 <div class="heading"> 
                         <h2>Sign In</h2>  
                 </div>
-                <div class="controls">
+                <div class="controls"><br>
                         <input type="text" class="form-control" placeholder="Usuario" name="login">
                         <input type="password" class="form-control" placeholder="Contraseña" name="pass">
                 </div>
